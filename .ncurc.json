@@ -1,0 +1,11 @@
+{
+  "reject": [
+    "react",
+    "react-dom",
+    "@testing-library/react",
+    "@types/react",
+    "@types/react-dom",
+    "imagemin-mozjpeg",
+    "imagemin-svgo"
+  ]
+}

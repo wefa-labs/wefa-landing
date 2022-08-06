@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "noImplicitThis": false,
+    "baseUrl": ".",
+    "paths": {
+      "@icons/*": ["src/assets/icons/*"],
+      "@blocks/*": ["src/blocks/*"],
+      "@blocks": ["src/blocks"],
+      "@definitions/*": ["src/definitions/*"],
+      "@definitions": ["src/definitions"],
+      "@components/*": ["src/components/*"],
+      "@components": ["src/components"],
+      "@layouts/*": ["src/layouts/*"],
+      "@layouts": ["src/layouts"],
+      "@public/*": ["public/*"],
+      "@public": ["public"],
+      "@styles/*": ["src/styles/*"],
+      "@styles": ["src/styles"],
+      "@test/*": ["test/*"],
+      "@test": ["test"],
+      "@types": ["types"],
+      "@types/*": ["types/*"],
+      "@root/*": ["./*"],
+      "@assets/*": ["src/assets/*"]
+    },
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "getI18nPaths.ts",
+    "types/*.ts"
+  ],
+  "exclude": ["node_modules", "test/*"]
+}

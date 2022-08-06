@@ -1,0 +1,27 @@
+{
+  "semi": true,
+  "trailingComma": "all",
+  "singleQuote": false,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "importOrder": [
+    "^react$",
+    "^(?!next)[a-z].*$",
+    "^(next|next-).*$",
+    "^@chakra-ui/(.*)$",
+    "^@definitions/(.*)$",
+    "^@components/(.*)$",
+    "^@components$",
+    "^@public/(.*)$",
+    "^@layouts/(.*)$",
+    "^@assets/(.*)$",
+    "^@icons/(.*)$",
+    "^@styles/(.*)$",
+    "^@test/(.*)$",
+    "^@blocks/(.*)$",
+    "^@blocks$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true
+}
