@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sentry/nextjs": "7.13.0",
     "contentful": "beta-v10",
     "next": "12.3.0",
     "react": "18.2.0",
