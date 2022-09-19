@@ -5,7 +5,6 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "strictNullChecks": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -14,37 +13,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "noImplicitThis": false,
+    "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@icons/*": ["src/assets/icons/*"],
-      "@blocks/*": ["src/blocks/*"],
-      "@blocks": ["src/blocks"],
-      "@definitions/*": ["src/definitions/*"],
-      "@definitions": ["src/definitions"],
-      "@components/*": ["src/components/*"],
-      "@components": ["src/components"],
-      "@layouts/*": ["src/layouts/*"],
-      "@layouts": ["src/layouts"],
-      "@public/*": ["public/*"],
-      "@public": ["public"],
-      "@styles/*": ["src/styles/*"],
-      "@styles": ["src/styles"],
-      "@test/*": ["test/*"],
-      "@test": ["test"],
-      "@types": ["types"],
-      "@types/*": ["types/*"],
-      "@root/*": ["./*"],
-      "@assets/*": ["src/assets/*"]
-    },
-    "incremental": true
+      "components/*": ["components/*"],
+      "lib/*": ["lib/*"],
+      "pages/*": ["pages/*"],
+      "public/*": ["public/*"],
+      "styles/*": ["styles/*"]
+    }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "getI18nPaths.ts",
-    "types/*.ts"
-  ],
-  "exclude": ["node_modules", "test/*"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

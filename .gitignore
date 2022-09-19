@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+_chakra
+_tailwind
 # dependencies
 /node_modules
 /.pnp
@@ -23,14 +24,14 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*.local
 
 # vercel
 .vercel
-.vscode
-*.bak
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
