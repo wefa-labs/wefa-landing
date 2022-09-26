@@ -3,6 +3,10 @@ interface HeaderInterface {
   links?: { title: string; link: string }[]
 }
 
-export const Header: React.FC<HeaderInterface> = ({}) => {
-  return <div className="flex flex-col items-center ">hhh</div>
+export const Header: React.FC<HeaderInterface> = ({ logo }) => {
+  return (
+    <header className="flex px-6 py-3">
+      <h1 className='text-6xl'>{logo}</h1>
+    </header>
+  )
 }

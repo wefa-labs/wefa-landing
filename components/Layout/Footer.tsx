@@ -1,14 +1,23 @@
+import { LinkType, Link } from 'components/Link'
+
 interface FooterInterface {
-  page: PageType
-  type: 'full' | 'split'
-  title: string
-  subtitle?: string
-  cta?: string
-  cta_link?: string
-  image?: string
-  background_image?: string
+  socials?: LinkType[]
+  links?: LinkType[]
 }
 
-export const Footer: React.FC<FooterInterface> = ({}) => {
-  return <div className="flex flex-col items-center ">hhh</div>
+export const Footer: React.FC<FooterInterface> = ({ socials, links }) => {
+  return (
+    <footer className="flex items-center justify-between px-6 py-3">
+      <ul>
+        {socials?.map((link) => (
+          <Link key={link.title} {...link} />
+        ))}
+      </ul>
+      <ul>
+        {links?.map((link) => (
+          <Link key={link.title} {...link} />
+        ))}
+      </ul>
+    </footer>
+  )
 }

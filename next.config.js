@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const webpack = require("webpack");
 const { withSentryConfig } = require("@sentry/nextjs");
 
 /** @type {import('next').NextConfig} */
@@ -20,21 +19,10 @@ const nextConfig = {
   },
   webpack: (config, _options) => {
     config.module.rules.push({
-      test: /\.(glsl|vs|fs|vert|frag)$/,
-      use: ["raw-loader", "glslify-loader"],
-    });
-
-    config.module.rules.push({
       test: /\.svg$/i,
       enforce: "pre",
       loader: require.resolve("@svgr/webpack"),
     });
-
-    config.plugins.push(
-      new webpack.ProvidePlugin({
-        Buffer: ["buffer", "Buffer"],
-      })
-    );
 
     return config;
   },
@@ -52,4 +40,4 @@ const sentryWebpackPluginOptions = {
   // https://github.com/getsentry/sentry-webpack-plugin#options.
 };
 
-module.exports = nextConfig;
+module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions)
