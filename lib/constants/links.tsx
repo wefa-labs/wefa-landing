@@ -12,6 +12,6 @@ export const socialLinks: LinkType[] = [
   },
 ]
 export const companyLinks: LinkType[] = [
-  { link: 'contact@wefa.app', title: 'Contact' },
+  { link: 'mailto: contact@wefa.app', title: 'Contact' },
 ]
 export const headerLinks: LinkType[] = []
