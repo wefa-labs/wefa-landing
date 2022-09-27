@@ -10,10 +10,10 @@ module.exports = {
       },
     },
     colors: {
-      water: '#3C91D6', // #009BAA
-      earth: '#27D664', // Alt - #008271
-      fire: '#D64C47', // Alt - #D62727
-      air: '#D68D1C', // #F67E00
+      water: '#3C91D6', // #009BAA #3b82f6 blue0-500
+      earth: '#27D664', // Alt - #008271  #166534 green-800
+      fire: '#D64C47', // Alt - #D62727 #b91c1c red-700
+      air: '#D68D1C', // #F67E00 #f59e0b amber-500
       soil: '#633A11',
     },
   },
