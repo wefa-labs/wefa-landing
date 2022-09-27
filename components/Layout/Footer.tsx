@@ -7,8 +7,8 @@ interface FooterInterface {
 
 export const Footer: React.FC<FooterInterface> = ({ socials, links }) => {
   return (
-    <footer className="flex items-center justify-between px-6 py-3">
-      <ul>
+    <footer className="flex w-full items-center justify-between text-white bg-[#633A11] px-6 py-3">
+      <ul className="flex gap-4">
         {socials?.map((link) => (
           <Link key={link.title} {...link} />
         ))}
