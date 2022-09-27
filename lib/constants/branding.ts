@@ -5,4 +5,5 @@ export const elementColors: Record<WefaElements, string> = {
   earth: '#27D664', // Alt - #008271
   fire: '#D64C47', // Alt - #D62727
   air: '#D68D1C', // #F67E00
+  // soil: #633A11
 }

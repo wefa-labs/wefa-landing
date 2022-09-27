@@ -1,23 +1,21 @@
 import { useRef, useEffect } from 'react'
+import type { NextPage } from 'next'
 import anime from 'animejs'
 
-import type { NextPage } from 'next'
-import { css } from '@emotion/css'
 import { DEFAULT_SEO } from 'lib/config/seo'
+import Subscribe from 'components/Forms/Subscribe'
+import Link from 'next/link'
 
-const styles = {
-  title: css`
-    font-weight: 900;
-    font-size: 3.5em;
-  `,
-}
-
-const HeroTitle: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const animation = useRef<HTMLHeadingElement | null>(null)
+const HeroContent: React.FC<{
+  className?: string
+  title?: string
+  subtitle?: string
+}> = ({ className, title, subtitle }) => {
+  const animation = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     if (animation.current) {
-      const textWrapper = document.querySelector('.ml3')
+      const textWrapper = document.querySelector(`.title`)
 
       if (textWrapper && textWrapper.textContent) {
         textWrapper.innerHTML = textWrapper.textContent.replace(
@@ -28,28 +26,92 @@ const HeroTitle: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      animation.current = anime.timeline({ loop: false }).add({
-        targets: '.ml3 .letter',
-        opacity: [0, 1],
-        easing: 'easeInOutQuad',
-        duration: 2250,
-        delay: (el, i) => 150 * (i + 1),
-      })
+      animation.current = anime
+        .timeline({ loop: false })
+        .add({
+          targets: `.title .letter`,
+          opacity: [0, 1],
+          easing: 'easeInOutQuad',
+          duration: 1200,
+          delay: (el, i) => 150 * (i + 1),
+        })
+        .add({
+          targets: `.subtitle`,
+          opacity: [1],
+          easing: 'easeInOutQuad',
+          duration: 1200,
+        })
     }
   }, [])
 
   return (
-    <h1 ref={animation} className={`${styles.title} ml3`}>
-      {children}
-    </h1>
+    <div
+      ref={animation}
+      className={` flex gap-8 justify-around w-full h-1/2  -translate-y-1/3 ${className}`}
+    >
+      <h3 className={`title max-w-xl text-4xl text-slate-800`}>{title}</h3>
+      <div
+        className={`subtitle max-w-2xl text-lg flex flex-col gap-2 text-slate-800 self-center`}
+      >
+        <h4>{subtitle}</h4>
+        <h4>
+          Using{' '}
+          <Link
+            target="_blank"
+            href={'https://www.youtube.com/watch?v=hYip_Vuv8J0'}
+          >
+            <span className="text-blue-400 cursor-pointer hover:text-blue-500 ">
+              Blockchain
+            </span>
+          </Link>
+          ,{' '}
+          <Link
+            target="_blank"
+            href={'https://www.youtube.com/watch?v=f9MwaH6oGEY'}
+          >
+            <span className="text-blue-400 cursor-pointer hover:text-blue-500 ">
+              Augmented Reality
+            </span>
+          </Link>
+          , &{' '}
+          <Link
+            target="_blank"
+            href={'https://www.youtube.com/watch?v=5q87K1WaoFI'}
+          >
+            <span className="text-blue-400 cursor-pointer hover:text-blue-500 ">
+              Machine Learning
+            </span>
+          </Link>{' '}
+          to build a Permisionless, Personal, & Insightful Experience with
+          Nature & Community.
+        </h4>
+        <h4>
+          Currently Building, Learning, & Getting Feedback.{' '}
+          <Link
+            target="_blank"
+            href={'https://research.typeform.com/to/zAB6Jx58'}
+          >
+            <span className="text-blue-400 cursor-pointer hover:text-blue-500 ">
+              Give Yours!
+            </span>
+          </Link>
+        </h4>
+
+        <Subscribe />
+      </div>
+    </div>
   )
 }
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <HeroTitle>{DEFAULT_SEO.title}</HeroTitle>
-    </div>
+    <section className="h-screen w-full container mx-auto overflow-x-hidden grid place-items-center px-12 py-12 bg-landing_bg bg-no-repeat bg-bottom bg-contain">
+      <HeroContent
+        title={DEFAULT_SEO.title}
+        subtitle={DEFAULT_SEO.description}
+        className=""
+      />
+    </section>
   )
 }
 
