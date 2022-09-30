@@ -11,7 +11,7 @@ const Layout: React.FC<{ children: ReactElement }> = ({ children }) => {
   return (
     <>
       <Header logo="WEFA" links={headerLinks} />
-      <main className={`flex flex-col flex-grow h-screen bg-[white]`}>
+      <main className={`flex flex-col flex-grow h-[calc(100vh-4rem)] bg-[white]`}>
         {children}
       </main>
       <Footer socials={socialLinks} links={companyLinks} />

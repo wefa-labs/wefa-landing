@@ -7,7 +7,7 @@ interface HeaderInterface {
 }
 
 const styles = css`
-  .shapes {
+  /* .shapes {
     position: relative;
     height: 100%;
     width: 100%;
@@ -50,16 +50,16 @@ const styles = css`
     margin: 0;
   }
 
-  ::selection {
+  /* ::selection {
     color: #fff;
     background: #2128bd;
-  }
+  } */
 `
 
 export const Header: React.FC<HeaderInterface> = ({ logo }) => {
   return (
     <header
-      className={`${styles} fixed top-0 w-screen flex md:px-8 px-4 py-6`}
+      className={`${styles} w-screen relative h-16 bg-white flex md:px-8 px-4 py-6`}
       onMouseMove={(e) => {
         const mouseX = e.clientX
         const mouseY = e.clientY
@@ -71,17 +71,15 @@ export const Header: React.FC<HeaderInterface> = ({ logo }) => {
         })
       }}
     >
-      <div className="relative w-full">
-        <div className="shapes">
-          <div className="shape shape-1"></div>
-          <div className="shape shape-2"></div>
-          <div className="shape shape-3"></div>
-        </div>
-        <div className="content w-full">
-          <h1 className="2xl:text-5xl md:text-4xl text-3xl font-bold tracking-wider ">
-            {logo}
-          </h1>
-        </div>
+      <div className="shapes">
+        <div className="shape shape-1"></div>
+        <div className="shape shape-2"></div>
+        <div className="shape shape-3"></div>
+      </div>
+      <div className="content w-full">
+        <h1 className="2xl:text-5xl md:text-4xl text-3xl font-bold tracking-wider text-indigo-700">
+          {logo}
+        </h1>
       </div>
     </header>
   )

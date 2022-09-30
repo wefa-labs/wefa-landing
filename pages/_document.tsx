@@ -18,7 +18,7 @@ const Document = () => {
           crossOrigin="true"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Varela+Round&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Varela+Round&display=swap"
           rel="stylesheet"
         />
       </Head>
