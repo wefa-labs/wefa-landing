@@ -59,7 +59,7 @@ const styles = css`
 export const Header: React.FC<HeaderInterface> = ({ logo }) => {
   return (
     <header
-      className={`${styles} fixed top-0 w-screen flex px-12 py-6`}
+      className={`${styles} fixed top-0 w-screen flex md:px-8 px-4 py-6`}
       onMouseMove={(e) => {
         const mouseX = e.clientX
         const mouseY = e.clientY
@@ -78,7 +78,7 @@ export const Header: React.FC<HeaderInterface> = ({ logo }) => {
           <div className="shape shape-3"></div>
         </div>
         <div className="content w-full">
-          <h1 className="lg:text-5xl font-bold tracking-wider ">
+          <h1 className="2xl:text-5xl md:text-4xl text-3xl font-bold tracking-wider ">
             {logo}
           </h1>
         </div>

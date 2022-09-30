@@ -9,6 +9,12 @@ enum STATE {
   SUBMITTED,
 }
 
+const buttonText: Record<STATE, string> = {
+  [STATE.UNSUBMITTED]: 'Subscribe',
+  [STATE.SUBMITTING]: 'Subscribing...',
+  [STATE.SUBMITTED]: 'Subscribed',
+}
+
 const Subscribe = () => {
   const [state, setState] = useState(STATE.UNSUBMITTED)
   const onSubmitForm = (event: FormEvent<HTMLFormElement>) => {
@@ -28,45 +34,30 @@ const Subscribe = () => {
   return (
     <form
       onSubmit={onSubmitForm}
-      className=" md:flex md:bg-white md:items-center md:rounded-xl md:shadow"
+      className="flex flex-col md:flex-row gap-4 items-center"
     >
       <input
         id="email-input"
         type="email"
         placeholder="Stay Updated"
-        className="py-6 px-8 md:py-2 md:px-0 bg-white w-full md:w-auto text-gray-900 md:bg-transparent text-xl mr-2 flex-shrink flex-grow rounded-xl md:rounded shadow md:shadow-none"
+        className="mt-1
+        block
+        w-full
+        rounded-md
+        shadow-sm
+        bg-slate-100
+        border-transparent
+        border-2
+        focus:border-2
+        focus:border-blue-400 focus:bg-white focus:ring-0"
       />
-      <div className="hidden  md:block md:text-center mt-4 md:mt-0">
-        {state == STATE.UNSUBMITTED && (
-          <PrimaryButton type="submit">Subscribe</PrimaryButton>
-        )}
-        {state == STATE.SUBMITTING && (
-          <PrimaryButton type="submit" disabled>
-            Requesting...
-          </PrimaryButton>
-        )}
-        {state == STATE.SUBMITTED && (
-          <PrimaryButton type="submit" disabled>
-            You&apos;re All Set!
-          </PrimaryButton>
-        )}
-      </div>
-
-      <div className="md:hidden mt-4">
-        {state == STATE.UNSUBMITTED && (
-          <PrimaryButton type="submit">Join The Waitlist</PrimaryButton>
-        )}
-        {state == STATE.SUBMITTING && (
-          <PrimaryButton type="submit" disabled>
-            Requesting...
-          </PrimaryButton>
-        )}
-        {state == STATE.SUBMITTED && (
-          <PrimaryButton type="submit" disabled>
-            You&apos;re All Set!
-          </PrimaryButton>
-        )}
-      </div>
+        <PrimaryButton
+          type="submit"
+          disabled={state !== STATE.UNSUBMITTED}
+          className="w-full md:w-32"
+        >
+          {buttonText[state]}
+        </PrimaryButton>
     </form>
   )
 }

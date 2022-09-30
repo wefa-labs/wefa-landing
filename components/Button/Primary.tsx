@@ -5,7 +5,7 @@ export type PrimaryButtonProps =
     href?: string
   }
 const PRIMARY_CLASSES =
-  'text-center text-gray-50 text-sm bg-blue-500 leading-8 px-4 py-2 rounded-full shadow-md hover:shadow-xl active:shadow flex-shrink-0 text-ellipsis whitespace-nowrap disabled:opacity-50 transition-all duration-200 ease-in-out'
+  'text-center text-gray-50 text-base bg-blue-400 font-semibold tracking-wide leading-8 px-4 py-2 rounded-full shadow-md hover:shadow-xl active:shadow flex-shrink-0 text-ellipsis whitespace-nowrap disabled:opacity-50 transition-all duration-200 ease-in-out'
 
 export const PrimaryButton = (props: PrimaryButtonProps) => {
   const { href, className } = props

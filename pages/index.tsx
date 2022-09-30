@@ -47,11 +47,15 @@ const HeroContent: React.FC<{
   return (
     <div
       ref={animation}
-      className={` flex gap-8 justify-around w-full h-1/2  -translate-y-1/3 ${className}`}
+      className={` flex flex-col md:flex-row sm:gap-8 gap-3 justify-around w-full h-1/2  sm:-translate-y-1/3 ${className}`}
     >
-      <h3 className={`title max-w-xl text-4xl text-slate-800`}>{title}</h3>
+      <h3
+        className={`title max-w-xl sm:text-4xl text-3xl text-center sm:text-left text-slate-800`}
+      >
+        {title}
+      </h3>
       <div
-        className={`subtitle max-w-2xl text-lg flex flex-col gap-2 text-slate-800 self-center`}
+        className={`subtitle max-w-2xl 2xl:text-xl md:text-lg flex flex-col gap-1 md:px-0 px-2 text-slate-800 self-center`}
       >
         <h4>{subtitle}</h4>
         <h4>
@@ -85,7 +89,7 @@ const HeroContent: React.FC<{
           to build a Permisionless, Personal, & Insightful Experience with
           Nature & Community.
         </h4>
-        <h4>
+        <h4 className="mb-4">
           Currently Building, Learning, & Getting Feedback.{' '}
           <Link
             target="_blank"
@@ -96,7 +100,6 @@ const HeroContent: React.FC<{
             </span>
           </Link>
         </h4>
-
         <Subscribe />
       </div>
     </div>
@@ -105,7 +108,7 @@ const HeroContent: React.FC<{
 
 const Home: NextPage = () => {
   return (
-    <section className="h-screen w-full container mx-auto overflow-x-hidden grid place-items-center px-12 py-12 bg-landing_bg bg-no-repeat bg-bottom bg-contain">
+    <section className="h-full w-full container mx-auto overflow-x-hidden grid place-items-center md:py-12 md:px-12 px-8  pb-16 sm:pb-0  bg-landing_bg bg-no-repeat bg-bottom xl:bg-contain sm:bg-auto bg-contain">
       <HeroContent
         title={DEFAULT_SEO.title}
         subtitle={DEFAULT_SEO.description}

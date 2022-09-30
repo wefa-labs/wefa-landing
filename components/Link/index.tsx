@@ -7,7 +7,7 @@ export type LinkType = {
 }
 
 export const Link: React.FC<LinkType> = ({ title, link, Icon }) => (
-  <li className='font-medium tracking-wider hover:text-blue-400 cursor-pointer'>
+  <li className="font-medium tracking-wider hover:text-water-400 cursor-pointer">
     <NextLink href={link}>{Icon ? Icon : title}</NextLink>
   </li>
 )
