@@ -9,6 +9,7 @@ body {
   font-family: -apple-system, Quicksand, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background: #633a11;
+  overflow-x: hidden;
 }
 
 h1 {
