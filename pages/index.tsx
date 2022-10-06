@@ -1,6 +1,5 @@
 import { useRef, useEffect } from 'react'
 import type { NextPage } from 'next'
-import gsap from 'gsap'
 import { DEFAULT_SEO } from 'lib/config/seo'
 import Subscribe from 'components/Forms/Subscribe'
 import Link from 'next/link'
@@ -9,7 +8,7 @@ const HeroContent: React.FC<{
   className?: string
   title?: string
   subtitle?: string
-}> = ({ className, title, subtitle }) => {
+}> = ({ className, subtitle }) => {
   const animation = useRef<HTMLDivElement | null>(null)
 
   return (
@@ -62,16 +61,16 @@ const HeroContent: React.FC<{
         </h4>
         <h4 className="mb-4">
           Currently Building, Learning, & Getting Feedback.{' '}
-          <Link
+          {/* <Link
             target="_blank"
             href={'https://research.typeform.com/to/zAB6Jx58'}
           >
             <span className="text-blue-400 cursor-pointer hover:text-blue-500 ">
               Give Yours!
             </span>
-          </Link>
+          </Link> */}
         </h4>
-        <Subscribe />
+        {/* <Subscribe /> */}
       </div>
     </div>
   )
@@ -79,7 +78,6 @@ const HeroContent: React.FC<{
 
 const Home: NextPage = () => {
   const animation = useRef<HTMLDivElement | null>(null)
-  const q = gsap.utils.selector(animation)
 
   useEffect(() => {
     if (animation.current) {
