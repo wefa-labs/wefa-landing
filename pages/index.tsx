@@ -56,7 +56,7 @@ const HeroContent: React.FC<{
               Machine Learning
             </span>
           </Link>{' '}
-          to build a Permisionless, Personal, & Insightful Experience with
+          to build a Permissionless, Personal, & Insightful Experience with
           Nature & Community.
         </h4>
         <h4 className="mb-4">
