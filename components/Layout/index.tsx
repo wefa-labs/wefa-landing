@@ -12,7 +12,7 @@ export const LAYOUT_PADDING_CLASS = 'px-8'
 const Layout: React.FC<{ children: ReactElement }> = ({ children }) => {
   return (
     <>
-      <Header logo={<Logo />} links={headerLinks} />
+      <Header logo={'WEFA'} links={headerLinks} />
       <main
         className={`flex flex-col flex-grow h-[calc(100vh-4rem)] w-screen bg-[white]`}
       >
