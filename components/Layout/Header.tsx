@@ -2,7 +2,7 @@ import { css } from '@emotion/css'
 import gsap from 'gsap'
 
 interface HeaderInterface {
-  logo: string
+  logo: React.ReactNode
   links?: { title: string; link: string }[]
 }
 
