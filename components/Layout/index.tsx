@@ -1,7 +1,7 @@
 import { companyLinks, headerLinks, socialLinks } from 'lib/constants/links'
 import { ReactElement, ReactNode } from 'react'
 
-import Logo from '../../public/logo/text/color.svg'
+// import Logo from '../../public/logo/text/color.svg'
 
 import { Footer } from './Footer'
 import { Header } from './Header'
