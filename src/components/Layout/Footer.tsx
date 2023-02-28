@@ -1,4 +1,4 @@
-import { LinkType, Link } from 'components/Link'
+import { LinkType, Link } from 'src/components/Link'
 
 interface FooterInterface {
   socials?: LinkType[]

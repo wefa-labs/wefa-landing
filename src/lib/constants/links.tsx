@@ -1,4 +1,4 @@
-import { LinkType } from 'components/Link'
+import { LinkType } from 'src/components/Link'
 
 import Twitter from '../../public/social/twitter.svg'
 // import Instagram from '../../public/social/instagram.svg'

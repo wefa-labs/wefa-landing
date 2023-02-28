@@ -4,7 +4,7 @@ import { DefaultSeo } from 'next-seo'
 import { DEFAULT_SEO } from 'lib/config/seo'
 
 import '../styles/globals.css'
-import { Layout } from 'components/Layout'
+import { Layout } from 'src/components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
 import type { NextPage } from 'next'
 import { DEFAULT_SEO } from 'lib/config/seo'
-import Subscribe from 'components/Forms/Subscribe'
+import Subscribe from 'src/components/Forms/Subscribe'
 import Link from 'next/link'
 
 const HeroContent: React.FC<{
@@ -60,7 +60,10 @@ const HeroContent: React.FC<{
           Nature & Community.
         </h4>
         <h4 className="mb-4">
-          Currently Building, Learning, & Getting Feedback.{' '}
+          Currently building our alpha release. Set for release summer 2022.{' '}
+          <Link href="https://docs.google.com/presentation/d/1BFq2bfOPHuCDJVfF2roWiqw_EhmLHsOqq3xHYJMf9b0/edit?usp=sharing">
+            View Deck
+          </Link>
           {/* <Link
             target="_blank"
             href={'https://research.typeform.com/to/zAB6Jx58'}
