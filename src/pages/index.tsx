@@ -115,7 +115,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Meta title="WEFA" />
+      <Meta title="Why" />
       <section
         ref={animation}
         className="h-full w-full container mx-auto overflow-x-hidden grid sm:place-items-center md:py-12 md:px-12 px-8  pb-16 sm:pb-0  bg-landing_bg bg-no-repeat bg-bottom xl:bg-contain sm:bg-auto bg-contain"
