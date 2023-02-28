@@ -1,9 +1,9 @@
 import { LinkType } from 'components/Link'
 
-import Twitter from '../../public/social/twitter.svg'
-// import Instagram from '../../public/social/instagram.svg'
-import LinkedIn from '../../public/social/linkedin.svg'
-import Github from '../../public/social/github.svg'
+import Twitter from 'assets/twitter.svg'
+// import Instagram from '../../assets/instagram.svg'
+import LinkedIn from 'assets/linkedin.svg'
+import Github from 'assets/github.svg'
 
 export const socialLinks: LinkType[] = [
   { link: 'https://twitter.com/_wefa_', title: 'Twitter', Icon: <Twitter /> },
