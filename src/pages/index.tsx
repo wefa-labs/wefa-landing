@@ -1,8 +1,10 @@
-import { useRef, useEffect } from 'react'
-import type { NextPage } from 'next'
-import { DEFAULT_SEO } from 'lib/config/seo'
-import Subscribe from 'src/components/Forms/Subscribe'
 import Link from 'next/link'
+import type { NextPage } from 'next'
+import { useRef, useEffect } from 'react'
+
+import { Meta } from 'components/Meta'
+import { DEFAULT_SEO } from 'lib/config/seo'
+// import Subscribe from 'src/components/Forms/Subscribe'
 
 const HeroContent: React.FC<{
   className?: string
@@ -114,16 +116,19 @@ const Home: NextPage = () => {
   }, [])
 
   return (
-    <section
-      ref={animation}
-      className="h-full w-full container mx-auto overflow-x-hidden grid sm:place-items-center md:py-12 md:px-12 px-8  pb-16 sm:pb-0  bg-landing_bg bg-no-repeat bg-bottom xl:bg-contain sm:bg-auto bg-contain"
-    >
-      <HeroContent
-        title={DEFAULT_SEO.title}
-        subtitle={DEFAULT_SEO.description}
-        className=""
-      />
-    </section>
+    <>
+      <Meta title="WEFA" description="WEFA Landing Page" />
+      <section
+        ref={animation}
+        className="h-full w-full container mx-auto overflow-x-hidden grid sm:place-items-center md:py-12 md:px-12 px-8  pb-16 sm:pb-0  bg-landing_bg bg-no-repeat bg-bottom xl:bg-contain sm:bg-auto bg-contain"
+      >
+        <HeroContent
+          title={DEFAULT_SEO.title}
+          subtitle={DEFAULT_SEO.description}
+          className=""
+        />
+      </section>
+    </>
   )
 }
 
