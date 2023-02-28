@@ -1,10 +1,10 @@
-import type { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
+import type { AppProps } from 'next/app'
 
+import { Layout } from 'components/Layout'
 import { DEFAULT_SEO } from 'lib/config/seo'
 
 import '../styles/globals.css'
-import { Layout } from 'src/components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

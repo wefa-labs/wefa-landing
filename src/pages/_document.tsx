@@ -1,5 +1,6 @@
-import { DEFAULT_SEO } from 'lib/config/seo'
 import { Head, Html, Main, NextScript } from 'next/document'
+
+import { DEFAULT_SEO } from 'lib/config/seo'
 
 const Document = () => {
   return (
