@@ -71,7 +71,7 @@ const HeroContent: React.FC<{
               alpha release
             </span>
           </Link>
-          , set for release summer 2023. Subscribe for updates!
+          , coming summer 2023. Subscribe for updates!
         </h4>
         <Subscribe />
       </div>
@@ -123,7 +123,6 @@ const Home: NextPage = () => {
         <HeroContent
           title={DEFAULT_SEO.title}
           subtitle={DEFAULT_SEO.description}
-          className=""
         />
       </section>
     </>
