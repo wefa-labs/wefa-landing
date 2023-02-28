@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import { DEFAULT_SEO } from 'lib/config/seo'
+
 const siteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL
 const name = 'WEFA'
 const twitterHandle = '@_wefa_'
@@ -7,16 +9,21 @@ const defaultOgImage = `${siteUrl}/social-image.png`
 
 export const Meta: React.FC<{
   title: string
-  description: string
+  description?: string
   prefix?: string
   ogImage?: string
-}> = ({ title, description, prefix = name, ogImage = defaultOgImage }) => {
+}> = ({
+  title,
+  description = DEFAULT_SEO.description,
+  prefix = name,
+  ogImage = defaultOgImage,
+}) => {
   const titleText = [prefix, title].filter(Boolean).join(' | ')
 
   return (
     <Head>
       <title key="title">{titleText}</title>
-      <meta key="description" name="description" content={description} />
+      <meta name="description" content={description} />
       <meta name="author" content={name} />
 
       <meta property="og:image" content={ogImage} />

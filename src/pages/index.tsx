@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react'
 
 import { Meta } from 'components/Meta'
 import { DEFAULT_SEO } from 'lib/config/seo'
-// import Subscribe from 'src/components/Forms/Subscribe'
+import Subscribe from 'components/Forms/Subscribe'
 
 const HeroContent: React.FC<{
   className?: string
@@ -27,7 +27,7 @@ const HeroContent: React.FC<{
         <span className="text-amber-400">World.</span>
       </h3>
       <div
-        className={`subtitle max-w-2xl 2xl:text-xl md:text-lg flex flex-col gap-1 md:px-0 px-2 text-slate-800 self-center`}
+        className={`subtitle max-w-2xl 2xl:text-xl md:text-lg flex flex-col gap-2 md:px-0 px-2 text-slate-800 self-center`}
       >
         <h4>{subtitle}</h4>
         <h4>
@@ -61,21 +61,19 @@ const HeroContent: React.FC<{
           to build a Permissionless, Personal, & Insightful Experience with
           Nature & Community.
         </h4>
-        <h4 className="mb-4">
-          Currently building our alpha release. Set for release summer 2022.{' '}
-          <Link href="https://docs.google.com/presentation/d/1BFq2bfOPHuCDJVfF2roWiqw_EhmLHsOqq3xHYJMf9b0/edit?usp=sharing">
-            View Deck
-          </Link>
-          {/* <Link
+        <h4 className="">
+          Currently building our{' '}
+          <Link
             target="_blank"
-            href={'https://research.typeform.com/to/zAB6Jx58'}
+            href="https://docs.google.com/presentation/d/1BFq2bfOPHuCDJVfF2roWiqw_EhmLHsOqq3xHYJMf9b0/edit?usp=sharing"
           >
             <span className="text-blue-400 cursor-pointer hover:text-blue-500 ">
-              Give Yours!
+              alpha release
             </span>
-          </Link> */}
+          </Link>
+          , set for release summer 2023. Subscribe for updates!
         </h4>
-        {/* <Subscribe /> */}
+        <Subscribe />
       </div>
     </div>
   )
@@ -117,7 +115,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Meta title="WEFA" description="WEFA Landing Page" />
+      <Meta title="WEFA" />
       <section
         ref={animation}
         className="h-full w-full container mx-auto overflow-x-hidden grid sm:place-items-center md:py-12 md:px-12 px-8  pb-16 sm:pb-0  bg-landing_bg bg-no-repeat bg-bottom xl:bg-contain sm:bg-auto bg-contain"

@@ -10,20 +10,26 @@
   },
   "dependencies": {
     "@emotion/css": "^11.10.0",
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@sentry/nextjs": "7.39.0",
     "animejs": "^3.2.1",
     "contentful": "beta-v10",
+    "cors": "^2.8.5",
     "gsap": "^3.11.1",
     "next": "13.2.1",
     "next-seo": "^5.15.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.2",
+    "zod": "^3.20.6"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@types/animejs": "^3.1.5",
+    "@types/cors": "^2.8.13",
+    "@types/mailchimp__mailchimp_marketing": "^3.0.6",
     "@types/node": "18.14.2",
     "@types/react": "18.0.28",
     "@typescript-eslint/eslint-plugin": "^5.38.0",

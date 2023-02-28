@@ -1,12 +1,16 @@
-import { FormEvent, useState } from 'react'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 
 import { PrimaryButton } from '../Button/Primary'
-// import { axiosClient } from 'lib/clients/axios'
 
 enum STATE {
   UNSUBMITTED,
   SUBMITTING,
   SUBMITTED,
+}
+
+type FormValues = {
+  email: string
 }
 
 const buttonText: Record<STATE, string> = {
@@ -17,30 +21,43 @@ const buttonText: Record<STATE, string> = {
 
 const Subscribe = () => {
   const [state, setState] = useState(STATE.UNSUBMITTED)
-  const onSubmitForm = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+  const [error, setError] = useState<string | null>(null)
 
+  const onSubmitForm = ({ email }: { email: string }) => {
     setState(STATE.SUBMITTING)
-    // axiosClient
-    //   .post(`/api/v1/subscriptions`, { email: email })
-    //   .then((_res) => {
-    //     setState(STATE.SUBMITTED)
-    //   })
-    //   .catch((_res) => {
-    //     setState(STATE.UNSUBMITTED)
-    //   })
+    setError(null)
+
+    fetch('/api/subscribe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: email }),
+    })
+      .then((_res) => {
+        setState(STATE.SUBMITTED)
+      })
+      .catch((_res) => {
+        setState(STATE.UNSUBMITTED)
+        setError('Something went wrong. Please try again.')
+      })
   }
 
+  const { register, handleSubmit } = useForm<FormValues>({
+    shouldUseNativeValidation: true,
+  })
+
   return (
-    <form
-      onSubmit={onSubmitForm}
-      className="flex flex-col md:flex-row gap-4 items-center"
-    >
-      <input
-        id="email-input"
-        type="email"
-        placeholder="Stay Updated"
-        className="mt-1
+    <>
+      <form
+        onSubmit={handleSubmit(onSubmitForm)}
+        className="flex flex-col md:flex-row gap-4 items-center relative"
+      >
+        <input
+          id="email-input"
+          type="email"
+          placeholder="Stay Updated"
+          className="mt-1
         block
         w-full
         rounded-md
@@ -50,7 +67,8 @@ const Subscribe = () => {
         border-2
         focus:border-2
         focus:border-blue-400 focus:bg-white focus:ring-0"
-      />
+          {...register('email', { required: true, maxLength: 320 })}
+        />
         <PrimaryButton
           type="submit"
           disabled={state !== STATE.UNSUBMITTED}
@@ -58,7 +76,13 @@ const Subscribe = () => {
         >
           {buttonText[state]}
         </PrimaryButton>
-    </form>
+        {!error && (
+          <p className="text-red-600 text-base font-medium tracking-wide text-center absolute -bottom-8 left-0">
+            {error}
+          </p>
+        )}
+      </form>
+    </>
   )
 }
 

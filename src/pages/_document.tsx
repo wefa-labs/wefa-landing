@@ -1,7 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document'
 
-import { DEFAULT_SEO } from 'lib/config/seo'
-
 const Document = () => {
   return (
     <Html lang="en">
@@ -9,8 +7,6 @@ const Document = () => {
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#b8abee" />
         <meta name="msapplication-TileColor" content="#582be0" />
-        <meta name="title" content="WEFA Landing" />
-        <meta name="description" content={DEFAULT_SEO.description} />
 
         <link rel="manifest" href="/manifest.json" />
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
